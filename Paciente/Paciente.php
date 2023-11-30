@@ -26,7 +26,7 @@ class Paciente
         $duracion_sesion = $params['duracion_sesion'];
         $imagen = $params['imagen'];
 
-        $insert = "INSERT INTO pacientes VALUES (NULL, '$primer_nombre', '$segundo_nombre', '$primer_apellido', '$segundo_apellido', '$email', '$celular', '$descripcion', '$fecha_sesion', '$duracion_sesion', '$imagen')";
+        $insert = "INSERT INTO pacientes VALUES (NULL, '$primer_nombre', '$segundo_nombre', '$primer_apellido', '$segundo_apellido', '$email', $celular, '$descripcion', '$fecha_sesion', '$duracion_sesion', '$imagen')";
 
         return mysqli_query($this->conexion, $insert);
 
@@ -54,7 +54,7 @@ class Paciente
         $imagen = $params['imagen'];
         $id = $params['id'];
         
-        $update = "UPDATE pacientes SET primer_nombre='$primer_nombre', segundo_nombre='$segundo_nombre', primer_apellido='$primer_apellido', segundo_apellido='$segundo_apellido', email='$email', celular='$celular', descripcion='$descripcion', fecha_sesion='$fecha_sesion', duracion_sesion='$duracion_sesion', imagen='$imagen' WHERE id = $id";
+        $update = "UPDATE pacientes SET primer_nombre='$primer_nombre', segundo_nombre='$segundo_nombre', primer_apellido='$primer_apellido', segundo_apellido='$segundo_apellido', email='$email', celular=$celular, descripcion='$descripcion', fecha_sesion='$fecha_sesion', duracion_sesion='$duracion_sesion', imagen='$imagen' WHERE id = $id";
     
         return mysqli_query($this->conexion, $update);
     }
